@@ -1,0 +1,115 @@
+@headerMobiHeight: 50px;
+@urlMainSprite: url('img/mainsprite.png');
+@mobileRightIndent: 5px;
+@mobileTopIndent: (@headerMobiHeight - @headerMobiHeight/2)/2;
+
+.header{
+  width: 100%;
+}
+.header_mobi{
+
+}
+.header_pc{
+
+}
+.header-top{
+  width: 100%;
+  position: relative;
+  background: #ffffff;
+}
+.header-top_mobi{
+  height: @headerMobiHeight;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+}
+.header-top_pc{
+
+}
+.header-top_logo{
+  display: block;
+}
+.header-top_logo-mobi{
+  height: @headerMobiHeight;
+  width: @headerMobiHeight * 2.5;
+  margin: 0 auto;
+  padding: 0 5px;
+  box-sizing: border-box;
+  position: relative;
+}
+.header-top_logo-pc{
+
+}
+.header-top_authButton-pc{
+
+}
+.header-top_activationButton-mobi{
+  width: 25px; height: 25px;
+  background: @urlMainSprite -55px -55px;
+  position: absolute;
+  top: @mobileTopIndent;
+  right: @mobileRightIndent+39px+@mobileRightIndent*2;
+  cursor: pointer;
+}
+.header-top_menuButton-mobi{
+  width: 39px; height: 25px;
+  background: @urlMainSprite -10px -10px;
+  position: absolute;
+  top: @mobileTopIndent;
+  right: @mobileRightIndent;
+  cursor: pointer;
+}
+.header-bottom{
+
+}
+.header-bottom_mobi{
+
+}
+.header-bottom_pc{
+
+}
+.header-bottom_menu-pc{
+
+}
+.info-box_mobi{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  z-index: 99;
+  display: none;
+  min-width: 280px;
+}
+.info-box_wrapper-mobi{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.info-box_closeButton_mobi{
+  position: absolute;
+  cursor: pointer;
+  top: @mobileTopIndent;
+  right: @mobileRightIndent + 39px - 25px;
+  width: 25px; height: 25px;
+  background: url('img/mainsprite.png') -10px -55px;
+}
+.info-box_content_mobi{
+  position: absolute;
+  width: 100%;
+}
+.site-menu_mobi{
+  display: block;
+}
+.site-menu_items-mobi{
+  width: 100%;
+}
+.site-menu_items-mobi a{
+  line-height: @headerMobiHeight;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #333332;
+  width: 100%;
+}
+.info-box_pc{
+  display: none;
+}

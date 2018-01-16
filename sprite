@@ -1,0 +1,24 @@
+
+x
+.bg-close {
+    width: 25px; height: 25px;
+    background: url('css_sprites.png') -10px -55px;
+}
+
+x
+.bg-menu {
+    width: 39px; height: 25px;
+    background: url('css_sprites.png') -10px -10px;
+}
+
+x
+.bg-message {
+    width: 32px; height: 25px;
+    background: url('css_sprites.png') -69px -10px;
+}
+
+x
+.bg-user {
+    width: 23px; height: 25px;
+    background: url('css_sprites.png') -55px -55px;
+}

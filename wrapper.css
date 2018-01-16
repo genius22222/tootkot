@@ -1,0 +1,12 @@
+.main-wrapper {
+  margin: 0 auto;
+}
+.main-wrapper_mobi {
+  width: 100%;
+}
+.main-wrapper_pc {
+  max-width: 1280px;
+}
+.wrapper {
+  padding: 10px 5px 0;
+}
