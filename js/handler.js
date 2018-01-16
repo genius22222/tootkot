@@ -100,6 +100,12 @@ var handler = {
             }
         }
     }
+    ,mobMenuFixer: function () {
+        h = $('.info-box_content_mobi').height();
+        h = (h/2)*(-1);
+        h = h + 'px';
+        $('.info-box_content_mobi').css('marginTop', h);
+    }
     ,eventON: function () {
         var safe = this;
         $(window).resize(function () {  //Обработчик изменения размера окна
@@ -108,13 +114,14 @@ var handler = {
         $('.header-top_activationButton-mobi').bind('click', function () { //Вливаем html авторизации или меню пользователя
             $('.info-box_content_mobi').empty(); //Очищаем поле ввода html
             $('.info-box_content_mobi').append(authHtml); //Записываем html
-
             $('.info-box_mobi').show();
+            safe.mobMenuFixer();
         });
         $('.header-top_menuButton-mobi').bind('click', function () { //Вливаем html меню сайта
             $('.info-box_content_mobi').empty(); //Очищаем поле ввода html
             $('.info-box_content_mobi').append(menuHtml); //Записываем html
             $('.info-box_mobi').show();
+            safe.mobMenuFixer();
         });
         $('.info-box_closeButton_mobi').bind('click', function () {
             $('.info-box_mobi').hide();

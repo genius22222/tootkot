@@ -65,6 +65,7 @@
 .info-box_content_mobi {
   position: absolute;
   width: 100%;
+  top: 50%;
 }
 .site-menu_mobi {
   display: block;
@@ -79,6 +80,8 @@
   text-decoration: none;
   text-transform: uppercase;
   color: #333332;
+  font-family: Raleway;
+  font-size: 24px;
   width: 100%;
 }
 .info-box_pc {
