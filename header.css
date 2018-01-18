@@ -84,6 +84,25 @@
   font-size: 24px;
   width: 100%;
 }
+.items-parent_mobi .sub-menu {
+  background: #333332;
+}
+.items-parent_mobi .sub-menu {
+  display: none;
+}
+.items-parent_mobi .sub-menu .site-menu_items-mobi a {
+  color: #ffffff;
+}
+.auth-mobi {
+  box-sizing: border-box;
+  padding: 0 10px;
+}
+.auth-mobi input[type="text"],
+.auth-mobi input[type="password"] {
+  font-size: 24px;
+  font-family: Raleway;
+  padding: 5px 9px 0 16px;
+}
 .info-box_pc {
   display: none;
 }

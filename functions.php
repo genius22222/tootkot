@@ -112,8 +112,8 @@ class mobiMenuWalker extends Walker_Nav_Menu {
         $item_output = $args->before;
         if (isset($item->classes[4])) {
             $class_names = ' class="site-menu_items-mobi items-parent_mobi"';
-            $attributes.= !empty( $item->url ) ? ' href="' .esc_attr($item->url). '"' : '';
-            $output .= '<li'.' onclick="mobileMenu(event);"'.' id="menu-item-' . $item->ID . '"' . $class_names . '>';
+            $attributes.= !empty( $item->url ) ? ' onclick="handler.opennerMobileMenu(this); return false;" href="' .esc_attr($item->url). '"' : '';
+            $output .= '<li'.''.' id="menu-item-' . $item->ID . '"' . $class_names . '>';
         } else {
             $class_names = ' class="site-menu_items-mobi"';
             $attributes.= !empty( $item->url ) ? ' href="' .esc_attr($item->url). '"' : '';
@@ -170,7 +170,7 @@ function getAuthMobi(){
         echo '<li><a href="'.get_template_directory_uri().'/chat/index.php">Мой чат</a></li>';
         echo '</ul>';
     } else {
-        echo '<form action="'.get_template_directory_uri().'/auth.php" method="POST">';
+        echo '<form class="auth-mobi" action="'.get_template_directory_uri().'/auth.php" method="POST">';
         echo '<input type="text" name="login" placeholder="Логин">';
         echo '<input type="password" name="pass" placeholder="Пароль">';
         echo '<input type="submit" value="Войти">';

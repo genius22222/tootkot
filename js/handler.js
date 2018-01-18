@@ -1,13 +1,16 @@
+var b = {};
 var handler = {
     screen: 'mobile'
     ,adaptive: function (winscreen) {
-        console.log(winscreen);
+        //console.log(winscreen);
         if (winscreen === undefined){
             winscreen = $(document).width();
         }
-        if (winscreen < 1280){
+        if (winscreen < 1080){
             if (this.screen !== 'mobile'){
                 //Тут адаптивность
+
+                console.log(winscreen);
 
                 $('.header').removeClass('header_pc');
                 $('.header').addClass('header_mobi');
@@ -37,6 +40,7 @@ var handler = {
                 $('.info-box_mobi').hide();
                 $('.info-box_content_mobi').empty();
 
+                console.log(winscreen);
 
                 $('.header').removeClass('header_mobi');
                 $('.header').addClass('header_pc');
@@ -126,6 +130,27 @@ var handler = {
         $('.info-box_closeButton_mobi').bind('click', function () {
             $('.info-box_mobi').hide();
             $('.info-box_content_mobi').empty();
-        })
+        });
+    }
+    ,opennerMobileMenu: function (e) {
+        var counter = 0;
+        var i = 0;
+        var elem = e.parentNode.childNodes[2];
+        if (!$(elem).hasClass('openToggle')) {
+            while(counter < $('.items-parent_mobi .sub-menu').length){
+                if ($($('.items-parent_mobi .sub-menu')[i]).hasClass('openToggle')){
+                    $($('.items-parent_mobi .sub-menu')[i]).removeClass('openToggle');
+                    $($('.items-parent_mobi .sub-menu')[i]).slideUp();
+                }
+                counter++;
+                i++;
+                console.log(counter+' '+i);
+            }
+            $(elem).addClass('openToggle');
+            $(elem).slideToggle();
+        } else {
+            $(elem).removeClass('openToggle');
+            $(elem).slideUp();
+        }
     }
 }
