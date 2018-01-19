@@ -170,10 +170,14 @@ function getAuthMobi(){
         echo '<li><a href="'.get_template_directory_uri().'/chat/index.php">Мой чат</a></li>';
         echo '</ul>';
     } else {
-        echo '<form class="auth-mobi" action="'.get_template_directory_uri().'/auth.php" method="POST">';
+        echo '<form class="auth-mobi clearfix" action="'.get_template_directory_uri().'/auth.php" method="POST">';
         echo '<input type="text" name="login" placeholder="Логин">';
         echo '<input type="password" name="pass" placeholder="Пароль">';
+        echo '<div style="margin-top: 25px; width: 305px; position: absolute; left: 50%; margin-left: -152.5px;">';
         echo '<input type="submit" value="Войти">';
+        echo '<a class="reg" href="'.get_template_directory_uri().'/reg.php">Регистрация</a>';
+        echo '<a class="resetPass" href="'.get_template_directory_uri().'/resetpass.php">Восстановить доступ?</a>';
+        echo '</div>';
         echo '</form>';
     }
     wp_die();

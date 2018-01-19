@@ -1,4 +1,5 @@
 @headerMobiHeight: 50px;
+@headerPCHeight: 100px;
 @urlMainSprite: url('img/mainsprite.png');
 @mobileRightIndent: 5px;
 @mobileTopIndent: (@headerMobiHeight - @headerMobiHeight/2)/2;
@@ -12,7 +13,16 @@
   font-family: Raleway;
   padding: 5px 9px 0 16px;
 }
-
+.buttonAStyle() {
+  font-size: 24px;
+  font-family: "Raleway Medium";
+  padding: 5px 9px;
+  background: #d70202;
+  color: #ffffff;
+  text-transform: uppercase;
+  border: 0;
+  line-height: 1;
+}
 .header{
   width: 100%;
 }
@@ -20,7 +30,9 @@
 
 }
 .header_pc{
-
+  height: 200px;
+  margin-top: 10px;
+  box-sizing: border-box;
 }
 .header-top{
   width: 100%;
@@ -32,12 +44,15 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
 }
 .header-top_pc{
-
+  position: relative;
+  display: block;
+  height: @headerPCHeight;
 }
 .header-top_logo{
-  display: block;
+
 }
 .header-top_logo-mobi{
+  display: block;
   height: @headerMobiHeight;
   width: @headerMobiHeight * 2.5;
   margin: 0 auto;
@@ -46,10 +61,19 @@
   position: relative;
 }
 .header-top_logo-pc{
+  height: @headerPCHeight;
+  width: @headerPCHeight * 2.5;
 
 }
+.header-top_infoBoxWrapper-pc{
+  position: absolute;
+  top: 10px;
+  right: 0;
+}
 .header-top_authButton-pc{
-
+  .buttonAStyle();
+  box-sizing: border-box;
+  text-decoration: none;
 }
 .header-top_activationButton-mobi{
   width: 25px; height: 25px;
@@ -86,7 +110,7 @@
   background: #ffffff;
   z-index: 99;
   display: none;
-  min-width: 280px;
+  min-width: 320px;
 }
 .info-box_wrapper-mobi{
   position: relative;
@@ -135,12 +159,40 @@
 .auth-mobi{
   box-sizing: border-box;
   padding: 0 10px;
+  position: relative;
 }
-auth-mobi input{
-
+.auth-mobi input{
+  display: block;
+  box-sizing: border-box;
 }
 .auth-mobi input[type="text"], .auth-mobi input[type="password"]{
   .mobileInputStyle();
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid #333332;
+  margin-bottom: 10px;
+}
+.auth-mobi input[type="submit"]{
+  .buttonAStyle();
+  margin: 0 auto;
+  display: inline-block;
+  margin-right: 10px;
+}
+.auth-mobi .reg{
+  .buttonAStyle();
+  margin: 0 auto;
+  display: inline-block;
+  text-decoration: none;
+}
+.auth-mobi .resetPass{
+  font-family: "Raleway Medium";
+  color: #333332;
+  text-decoration: none;
+  font-size: 24px;
+  display: block;
+  text-align: center;
+  vertical-align: middle;
+  margin-top: 20px;
 }
 .info-box_pc{
   display: none;

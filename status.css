@@ -8,3 +8,8 @@
   height: 100%;
   z-index: 99;
 }
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}

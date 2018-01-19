@@ -12,6 +12,9 @@ var handler = {
 
                 console.log(winscreen);
 
+                $('.main-wrapper').removeClass('main-wrapper_pc');
+                $('.main-wrapper').addClass('main-wrapper_mobi');
+
                 $('.header').removeClass('header_pc');
                 $('.header').addClass('header_mobi');
 
@@ -32,6 +35,13 @@ var handler = {
 
                 $('.header-bottom_menu-pc').addClass('disable');
 
+
+
+                //Wrapper
+
+                $('.wrapper').removeClass('wrapper_pc');
+                $('.wrapper').addClass('wrapper_mobi');
+
                 this.screen = 'mobile';
             }
         } else {
@@ -41,6 +51,9 @@ var handler = {
                 $('.info-box_content_mobi').empty();
 
                 console.log(winscreen);
+
+                $('.main-wrapper').removeClass('main-wrapper_mobi');
+                $('.main-wrapper').addClass('main-wrapper_pc');
 
                 $('.header').removeClass('header_mobi');
                 $('.header').addClass('header_pc');
@@ -61,6 +74,13 @@ var handler = {
                 $('.header-bottom').addClass('header-bottom_pc');
 
                 $('.header-bottom_menu-pc').removeClass('disable');
+
+
+
+                //Wrapper
+
+                $('.wrapper').removeClass('wrapper_mobi');
+                $('.wrapper').addClass('wrapper_pc');
 
                 this.screen = 'desktop';
             }

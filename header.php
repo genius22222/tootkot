@@ -22,8 +22,8 @@
             <div class="header-top_menuButton-mobi"></div>
             <div class="header-top_infoBoxWrapper-pc disable">
                 <?php
-                if ( is_user_logged_in() ) echo '<a href="'.get_template_directory_uri().'/lk.php" class="header-top_authButton-pc" onclick="handler(messagebox, pc); return false; ">Личный кабинет</a>';
-                else '<a href="'.get_template_directory_uri().'/auth.php" class="header-top_authButton-pc">Вход/Регистрация</a>';
+                if ( is_user_logged_in() ){ echo '<a href="'.get_template_directory_uri().'/lk.php" class="header-top_authButton-pc" onclick="handler(messagebox, pc); return false; ">Личный кабинет</a>'; }
+                else { echo '<a href="'.get_template_directory_uri().'/auth.php" class="header-top_authButton-pc">Вход/Регистрация</a>'; }
                 ?>
                 <div class="info-box_pc">
                     <?php
