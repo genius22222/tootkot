@@ -8,8 +8,10 @@ var handler = {
         }
         if (winscreen < 1080){
             if (this.screen !== 'mobile'){
-                //Тут адаптивность
+                //Закрываем какашки
+                $('.auth-pc').slideUp();
 
+                //Тут адаптивность
                 console.log(winscreen);
 
                 $('.main-wrapper').removeClass('main-wrapper_pc');

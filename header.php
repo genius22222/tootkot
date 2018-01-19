@@ -23,13 +23,25 @@
             <div class="header-top_infoBoxWrapper-pc disable">
                 <?php
                 if ( is_user_logged_in() ){ echo '<a href="'.get_template_directory_uri().'/lk.php" class="header-top_authButton-pc" onclick="handler(messagebox, pc); return false; ">Личный кабинет</a>'; }
-                else { echo '<a href="'.get_template_directory_uri().'/auth.php" class="header-top_authButton-pc">Вход/Регистрация</a>'; }
+                else { echo '<a href="'.get_template_directory_uri().'/auth.php" onclick="$(\'.auth-pc\').slideToggle(300); return false;" class="header-top_authButton-pc">Вход/Регистрация</a>'; }
                 ?>
-                <div class="info-box_pc">
+                <div class="info-box_pc clearfix">
                     <?php
                     if ( is_user_logged_in() ){
                         echo '<a href="'.get_template_directory_uri().'/myorders.php" id="ordersPC">Мои заказы</a>';
                         echo '<a href="'.get_template_directory_uri().'/chat/index.php" id="openChatPC">Сообщения</a>';
+                    } else {
+                        echo '<form class="auth-pc clearfix" action="'.get_template_directory_uri().'/auth.php" method="POST">';
+                        echo '<input type="text" name="login" placeholder="Логин">';
+                        echo '<input type="password" name="pass" placeholder="Пароль">';
+                        echo '<div style="margin-top: 15px;">';
+                        echo '<input type="submit" value="Войти">';
+                        echo '<a class="reg" href="'.get_template_directory_uri().'/reg.php">Регистрация</a>';
+                        echo '<div style="padding-top: 15px;">'; //Нужен для отсутупа через padding, в обход вылета отсутпа "наверх"
+                        echo '<a class="resetPass" href="'.get_template_directory_uri().'/resetpass.php">Восстановить доступ?</a>';
+                        echo '</div>';
+                        echo '</div>';
+                        echo '</form>';
                     }
                 ?>
                 </div>

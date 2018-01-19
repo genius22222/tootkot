@@ -35,8 +35,9 @@
 }
 .header-top_infoBoxWrapper-pc {
   position: absolute;
-  top: 10px;
+  top: 0;
   right: 0;
+  width: 330px;
 }
 .header-top_authButton-pc {
   font-size: 24px;
@@ -47,7 +48,70 @@
   text-transform: uppercase;
   border: 0;
   line-height: 1;
+  display: block;
+  width: 330px;
+  text-align: center;
   box-sizing: border-box;
+  text-decoration: none;
+}
+.info-box_pc {
+  width: 100%;
+}
+.auth-pc {
+  width: 100%;
+  height: 100%;
+  background: #f9ffc1;
+  box-sizing: border-box;
+  padding: 25px 10px;
+  display: none;
+}
+.auth-pc input[type="password"] {
+  margin-top: 15px;
+}
+.auth-pc input[type="text"],
+.auth-pc input[type="password"] {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  border: 0;
+  border-bottom: 2px solid #333332;
+  background: #f9ffc1;
+  font-size: 24px;
+  font-family: Raleway;
+  padding: 5px 9px 0 16px;
+}
+.auth-pc input[type="submit"] {
+  display: inline-block;
+  float: left;
+  font-size: 24px;
+  font-family: "Raleway Medium";
+  padding: 5px 9px;
+  background: #d70202;
+  color: #ffffff;
+  text-transform: uppercase;
+  border: 0;
+  line-height: 1;
+}
+.auth-pc .reg {
+  display: inline-block;
+  text-decoration: none;
+  float: right;
+  font-size: 24px;
+  font-family: "Raleway Medium";
+  padding: 5px 9px;
+  background: #d70202;
+  color: #ffffff;
+  text-transform: uppercase;
+  border: 0;
+  line-height: 1;
+}
+.auth-pc .resetPass {
+  display: block;
+  font-family: "Raleway Medium";
+  font-size: 24px;
+  color: #333332;
+  margin-top: 15px;
+  display: inline-block;
   text-decoration: none;
 }
 .header-top_activationButton-mobi {
@@ -176,7 +240,4 @@
   text-align: center;
   vertical-align: middle;
   margin-top: 20px;
-}
-.info-box_pc {
-  display: none;
 }
