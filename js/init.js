@@ -10,4 +10,7 @@ function init() {
 
     handler.adaptive();
     handler.eventON();
+    handler.randColorsPCMenu();
+
+    setTimeout(hidePrerol, 500);
 }
