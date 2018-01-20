@@ -1,4 +1,7 @@
+"use strict";
 var b = {};
+var timeout_id;
+
 var handler = {
     screen: 'mobile'
     ,adaptive: function (winscreen) {
@@ -96,7 +99,7 @@ var handler = {
                 var data = {
                     action: 'getMenuMobi',
                 };
-                a = {};
+                var a = {};
                 $.ajax({
                     url: myajax.url,
                     type: 'POST',
@@ -127,6 +130,7 @@ var handler = {
         }
     }
     ,mobMenuFixer: function () {
+        var h;
         h = $('.info-box_content_mobi').height();
         h = (h/2)*(-1);
         h = h + 'px';
@@ -173,6 +177,15 @@ var handler = {
         } else {
             $(elem).removeClass('openToggle');
             $(elem).slideUp();
+        }
+    }
+    ,opennerPCMenu: function (e, close) {
+        if (close === undefined){
+            $(e.childNodes[2]).show();
+            clearTimeout(timeout_id);
+        }
+        if (close === true){
+            timeout_id = setTimeout(function() { $(e.childNodes[2]).hide(); }, 100);
         }
     }
 }

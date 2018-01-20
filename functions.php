@@ -78,9 +78,9 @@ class pcMenuWalker extends Walker_Nav_Menu {
         $attributes = '';
         $item_output = $args->before;
         if (isset($item->classes[4])) {
-            $class_names = ' class="site-menu_items-pc items-parent_pc"';
+            $class_names = ' onmouseover="handler.opennerPCMenu(this);" onmouseout="handler.opennerPCMenu(this, true);" class="site-menu_items-pc items-parent_pc"';
             $attributes.= !empty( $item->url ) ? ' href="' .esc_attr($item->url). '"' : '';
-            $output .= '<li'.' onclick="mobileMenu(event);"'.' id="menu-item-' . $item->ID . '"' . $class_names . '>';
+            $output .= '<li'.''.' id="menu-item-' . $item->ID . '"' . $class_names . '>';
         } else {
             $class_names = ' class="site-menu_items-pc"';
             $attributes.= !empty( $item->url ) ? ' href="' .esc_attr($item->url). '"' : '';
