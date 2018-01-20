@@ -193,4 +193,34 @@ var handler = {
             timeout_id = setTimeout(function() { $(e.childNodes[2]).hide(); obpcme = undefined}, 100);
         }
     }
+    ,randColorsPCMenu: function () {
+        var colorArray = getColor();
+        var lengthElem = $('.items-parent_pc').length;
+        var i = 0;
+        while (i < lengthElem){
+            if (colorArray.length <= 0){
+                colorArray = getColor();
+            } else {
+                var rand = this.randomInteger(1, colorArray.length);
+                var color = colorArray[rand];
+                console.log(rand+' '+color);
+                console.log(colorArray);
+                this.deleteElem(color, colorArray);
+                //console.log(colorArray);
+                $($('.items-parent_pc')[i].childNodes[0]).css('border-bottom-color', color);
+                i++;
+            }
+        }
+        function getColor() {
+           return ['#FF0000', '#FF7F00', '#FFFF00', '#00FF00', '#0000FF', '#8B00FF' ];
+        }
+    }
+    ,randomInteger: function (min, max) {
+        var rand = min - 0.5 + Math.random() * (max - min + 1)
+        rand = Math.round(rand);
+        return rand;
+    }
+    ,deleteElem: function (el, arr) {
+        arr.splice(arr.indexOf(el));
+    }
 }
