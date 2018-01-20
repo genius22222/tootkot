@@ -1,6 +1,7 @@
 "use strict";
 var b = {};
-var timeout_id;
+var timeout_id; //Кэшируем таймер айди
+var obpcme; //Кэшируем объект li для PC menu
 
 var handler = {
     screen: 'mobile'
@@ -180,12 +181,16 @@ var handler = {
         }
     }
     ,opennerPCMenu: function (e, close) {
+        if ((obpcme !== undefined) && (obpcme != e)){
+            $(obpcme.childNodes[2]).hide();
+        }
         if (close === undefined){
             $(e.childNodes[2]).show();
+            obpcme = e;
             clearTimeout(timeout_id);
         }
         if (close === true){
-            timeout_id = setTimeout(function() { $(e.childNodes[2]).hide(); }, 100);
+            timeout_id = setTimeout(function() { $(e.childNodes[2]).hide(); obpcme = undefined}, 100);
         }
     }
 }
