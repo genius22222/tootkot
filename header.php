@@ -22,14 +22,16 @@
             <div class="header-top_menuButton-mobi"></div>
             <div class="header-top_infoBoxWrapper-pc disable">
                 <?php
-                if ( is_user_logged_in() ){ echo '<a href="'.get_template_directory_uri().'/lk.php" class="header-top_authButton-pc" onclick="handler(messagebox, pc); return false; ">Личный кабинет</a>'; }
+                if ( is_user_logged_in() ){ echo '<a href="'.get_template_directory_uri().'/lk.php" class="header-top_authButton-pc" onclick="$(\'.auth-pc\').slideToggle(300); return false;">Личный кабинет</a>'; }
                 else { echo '<a href="'.get_template_directory_uri().'/auth.php" onclick="$(\'.auth-pc\').slideToggle(300); return false;" class="header-top_authButton-pc">Вход/Регистрация</a>'; }
                 ?>
                 <div class="info-box_pc clearfix">
                     <?php
                     if ( is_user_logged_in() ){
+	                    echo '<form class="auth-pc clearfix" action="'.get_template_directory_uri().'/lk.php" method="POST">';
                         echo '<a href="'.get_template_directory_uri().'/myorders.php" id="ordersPC">Мои заказы</a>';
                         echo '<a href="'.get_template_directory_uri().'/chat/index.php" id="openChatPC">Сообщения</a>';
+	                    echo '</form>';
                     } else {
                         echo '<form class="auth-pc clearfix" action="'.get_template_directory_uri().'/auth.php" method="POST">';
                         echo '<input type="text" name="login" placeholder="Логин">';

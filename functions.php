@@ -23,33 +23,37 @@ function filter_function_name_3292( $html, $blog_id ){
     return $m[1];
 }
 
+add_action('wp_enqueue_scripts', 'getScripts');
+
+function getScripts() {
 //Регаем стили
-wp_register_style('main-style', get_template_directory_uri().'/style.css', 'beta1.0');
-wp_enqueue_style('main-style', get_template_directory_uri().'/style.css', 'beta1.0');
+	wp_register_style( 'main-style', get_template_directory_uri() . '/style.css', 'beta1.0' );
+	wp_enqueue_style( 'main-style', get_template_directory_uri() . '/style.css', 'beta1.0' );
 
 //Цепляем JQuery
-wp_enqueue_script('myjquery', get_template_directory_uri() . '/js/jquery.js');
-wp_enqueue_script('device');
+	wp_enqueue_script( 'myjquery', get_template_directory_uri() . '/js/jquery.js' );
+	wp_enqueue_script( 'device' );
 
 //Цепляем определять типа устройства
-wp_enqueue_script('device', get_template_directory_uri() . '/js/device.js', array('myjquery'));
-wp_enqueue_script('device');
+	wp_enqueue_script( 'device', get_template_directory_uri() . '/js/device.js', array( 'myjquery' ) );
+	wp_enqueue_script( 'device' );
 
 //Цепляем инициализацию
-wp_enqueue_script('init', get_template_directory_uri() . '/js/init.js', array('myjquery'));
-wp_enqueue_script('init');
+	wp_enqueue_script( 'init', get_template_directory_uri() . '/js/init.js', array( 'myjquery' ) );
+	wp_enqueue_script( 'init' );
 
 //Цепляем обработчик
-wp_enqueue_script('handler', get_template_directory_uri() . '/js/handler.js', array('init'));
-wp_enqueue_script('handler');
-wp_localize_script('handler', 'myajax', array(
-    'url' => admin_url('admin-ajax.php'),
-));
+	wp_enqueue_script( 'handler', get_template_directory_uri() . '/js/handler.js', array( 'init' ) );
+	wp_enqueue_script( 'handler' );
+	wp_localize_script( 'handler', 'myajax', array(
+		'url' => admin_url( 'admin-ajax.php' ),
+	) );
 
 //Цепляем закрывашку прерола
-wp_enqueue_script('prerol', get_template_directory_uri() . '/js/prerol.js', array('init'));
-wp_enqueue_script('prerol');
+	wp_enqueue_script( 'prerol', get_template_directory_uri() . '/js/prerol.js', array( 'init' ) );
+	wp_enqueue_script( 'prerol' );
 
+}
 //Отключение всякого дерьма
 remove_action( 'wp_head',             '_wp_render_title_tag',            1     );
 remove_action( 'wp_head',             'wp_resource_hints',               2     );
@@ -167,7 +171,7 @@ function getAuthMobi(){
     if( is_user_logged_in() ){
         echo '<ul class="authorized_mobi">';
         echo '<li><a href="'.get_template_directory_uri().'/myorders.php">Мои заказы</a></li>';
-        echo '<li><a href="'.get_template_directory_uri().'/chat/index.php">Мой чат</a></li>';
+        echo '<li><a href="'.get_template_directory_uri().'/chat/index.php">Мои сообщения</a></li>';
         echo '</ul>';
     } else {
         echo '<form class="auth-mobi clearfix" action="'.get_template_directory_uri().'/auth.php" method="POST">';
